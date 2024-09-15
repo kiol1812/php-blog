@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FirstController;
 
-Route::get('/{path?}', function ($path='welcome') { // add ? mean can use url without $path
-    $allowedPath = ['welcome'];
-    if(in_array($path, $allowedPath)) return view($path);
-    else return "page didn't exit";
-});
+// add ? mean can use url without $path
+Route::get('/{path?}', [FirstController::class, 'index']);
 
 /*
  * "str" v.s. 'str'
