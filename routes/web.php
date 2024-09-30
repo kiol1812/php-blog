@@ -18,7 +18,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('posts', [AdminPostsController::class, 'index'])->name("posts.index");
     Route::get('posts/create', [AdminPostsController::class, 'create'])->name("posts.create");
     Route::post('posts', [AdminPostsController::class, 'store'])->name("posts.store");
-    Route::get('posts/{post}/edit', [AdminPostsController::class, 'edit'])->name("posts.edit");
-    Route::patch('posts/{post}', [AdminPostsController::class, 'update'])->name("posts.update");
-    Route::delete('posts/{post}', [AdminPostsController::class, 'destroy'])->name("posts.destroy");
+    Route::get('posts/{id}/edit', [AdminPostsController::class, 'edit'])->name("posts.edit");
+    Route::patch('posts/{id}', [AdminPostsController::class, 'update'])->name("posts.update");
+    Route::delete('posts/{id}', [AdminPostsController::class, 'destroy'])->name("posts.destroy");
 });
